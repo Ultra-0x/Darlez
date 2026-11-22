@@ -104,6 +104,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'salesplatform.wsgi.application'
 
+print("VERCEL:", os.getenv("VERCEL"))
+print("DATABASE_URL EXISTS:", bool(os.getenv("DATABASE_URL")))
+print("DATABASE ENGINE:", DATABASES["default"]["ENGINE"])
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
