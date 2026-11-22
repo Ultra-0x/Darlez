@@ -1,0 +1,348 @@
+{% extends "base_public.html" %}
+{% load humanize static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<section class="hero mb-4" aria-labelledby="home-hero-title">
+  <div class="hero-inner">
+    <p class="hero-eyebrow mb-3">{{ site_motto }}</p>
+    <h1 class="hero-title mb-3" id="home-hero-title">Diagnostics and laboratory supplies for better care.</h1>
+    <p class="hero-intro mb-4">Diagnostic testing for patients, alongside equipment, reagents and laboratory consumables for healthcare facilities across Nigeria.</p>
+    <div class="hero-actions d-flex flex-wrap gap-2">
+      <a href="{% url 'storefront:catalog' %}?department=diagnostics" class="btn hero-btn-primary">
+        Browse Diagnostic Tests <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+      </a>
+      <a href="{% url 'storefront:catalog' %}?department=supplies" class="btn hero-btn-secondary">
+        Explore Equipment &amp; Supplies
+      </a>
+    </div>
+    <div class="hero-service-points" aria-label="Darlez services">
+      <span><i class="bi bi-check2-circle" aria-hidden="true"></i> Diagnostic testing</span>
+      <span><i class="bi bi-check2-circle" aria-hidden="true"></i> Home sample collection</span>
+      <span><i class="bi bi-check2-circle" aria-hidden="true"></i> Equipment &amp; supplies</span>
+    </div>
+    <a class="hero-contact" href="https://wa.me/{{ whatsapp_number }}" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-whatsapp" aria-hidden="true"></i> Talk to our team
+    </a>
+  </div>
+  <div class="hero-visual">
+    <img src="{% static 'img/darlez-hero.png' %}" alt="Laboratory professional using diagnostic equipment">
+    <div class="hero-image-label">
+      <span class="hero-image-icon"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
+      <span><strong>{{ site_name }}</strong><small>Diagnostics · Equipment · Supplies</small></span>
+    </div>
+  </div>
+</section>
+
+<section class="home-service-banner" aria-labelledby="home-service-title">
+  <div class="home-service-icon" aria-hidden="true"><i class="bi bi-house-heart"></i></div>
+  <div class="home-service-copy">
+    <p class="eyebrow">HOME SAMPLE COLLECTION</p>
+    <h2 id="home-service-title">Diagnostic testing, from the comfort of home</h2>
+    <p>Our team can visit your home to collect samples for testing. Choose your tests, request home sample collection, and provide your address. We’ll confirm service availability and appointment details.</p>
+  </div>
+  <a href="{% url 'storefront:catalog' %}?department=diagnostics" class="btn btn-success">
+    Request Home Testing <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+  </a>
+</section>
+
+<section class="mb-5" aria-labelledby="care-gallery-title">
+  <div class="mb-3">
+    <p class="hero-eyebrow mb-2">CARE IN PRACTICE</p>
+    <h2 class="h4 mb-1" id="care-gallery-title">Our team at work</h2>
+    <p class="small text-muted mb-0">Meet the people behind Darlez diagnostic testing and patient care.</p>
+  </div>
+  <div class="care-gallery-grid">
+    <figure class="care-photo-card">
+      <img class="care-photo-image" src="{% static 'img/darlez-lab-worker.png' %}" alt="Darlez laboratory worker operating diagnostic equipment">
+      <figcaption>
+        <strong>Laboratory diagnostics</strong>
+        <span>Our team working with diagnostic laboratory equipment.</span>
+      </figcaption>
+    </figure>
+    <figure class="care-photo-card">
+      <img class="care-photo-image" src="{% static 'img/darlez-patient-care.png' %}" alt="Darlez laboratory worker collecting a blood sample from a patient">
+      <figcaption>
+        <strong>Patient sample collection</strong>
+        <span>Careful sample collection by our laboratory team.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="credibility-strip mb-4 fade-in-section" aria-label="Darlez services and support">
+  <h2 class="visually-hidden">Services and support</h2>
+  <div class="credibility-item">
+    <span class="credibility-icon"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i></span>
+    <div>
+      <strong>Diagnostic testing</strong>
+      <p>Laboratory services for patient requests.</p>
+    </div>
+  </div>
+  <div class="credibility-item">
+    <span class="credibility-icon"><i class="bi bi-box-seam" aria-hidden="true"></i></span>
+    <div>
+      <strong>Equipment &amp; supplies</strong>
+      <p>Diagnostic equipment, reagents and consumables for healthcare facilities.</p>
+    </div>
+  </div>
+  <div class="credibility-item">
+    <span class="credibility-icon"><i class="bi bi-whatsapp" aria-hidden="true"></i></span>
+    <div>
+      <strong>Direct WhatsApp contact</strong>
+      <p>Send service or supply requests to the Darlez team.</p>
+    </div>
+  </div>
+</section>
+
+{% if promotions %}
+  <div class="promo-banner p-4 mb-4 fade-in-section">
+    <h2 class="mb-1"> Active Sales</h2>
+    {% for promo in promotions %}
+      <div class="mb-1"><strong>{{ promo.title }}</strong> — {{ promo.discount_percent }}% off. {{ promo.banner_text }} <span class="small">(ends {{ promo.end_date }})</span></div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="fade-in-section mb-5">
+  <h4 class="text-center mb-3">Diagnostics and Supply for Healthcare</h4>
+  <div class="row g-3">
+    <div class="col-6 col-md-3">
+      <div class="feature-card">
+        <div class="icon-circle"><i class="bi bi-clipboard2-pulse"></i></div>
+        <div class="fw-bold">Diagnostic Testing</div>
+        <div class="small text-muted">Laboratory tests and diagnostic services</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="feature-card">
+        <div class="icon-circle"><i class="bi bi-cpu"></i></div>
+        <div class="fw-bold">Diagnostic Equipment</div>
+        <div class="small text-muted">Equipment supply for healthcare facilities</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="feature-card">
+        <div class="icon-circle"><i class="bi bi-eyedropper"></i></div>
+        <div class="fw-bold">Reagents</div>
+        <div class="small text-muted">Reagents and kits for laboratory use</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="feature-card">
+        <div class="icon-circle"><i class="bi bi-box-seam"></i></div>
+        <div class="fw-bold">Laboratory Consumables</div>
+        <div class="small text-muted">Consumables for healthcare facilities</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="fade-in-section mb-5" aria-labelledby="featured-equipment-title">
+  <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2">
+    <div>
+      <h2 class="h4 mb-1" id="featured-equipment-title">Featured Diagnostic Equipment</h2>
+      <p class="small text-muted mb-0">Models shown in the Darlez flyer. Confirm availability, configuration and pricing by request.</p>
+    </div>
+    <a href="{% url 'storefront:catalog' %}?department=supplies" class="btn btn-outline-success btn-sm">Browse Equipment &amp; Supplies</a>
+  </div>
+  <div class="row g-3">
+    {% for equipment in featured_equipment %}
+      <div class="col-12 col-md-4">
+        <article class="card featured-equipment-card">
+          <img src="{% static equipment.image %}" alt="{{ equipment.alt }}">
+          <div class="card-body">
+            <p class="small text-muted mb-1">Automated chemistry analyzer</p>
+            <h3 class="h5 card-title">{{ equipment.name }}</h3>
+            <a href="https://wa.me/{{ whatsapp_number }}?text=Hello%20Darlez%2C%20please%20send%20me%20a%20quote%20for%20{{ equipment.name|urlencode }}."
+               class="btn btn-success w-100" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Request a Quote
+            </a>
+          </div>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="card equipment-flyer border-0 shadow-sm mx-auto overflow-hidden mt-4">
+    <div style="position:relative;line-height:0;">
+      <img src="{% static 'img/darlez-equipment.png' %}" alt="Darlez flyer featuring Chemwell 2910, Autolyser, and HRJ-C100 analyzers" style="display:block;width:100%;height:auto;">
+      <span aria-hidden="true" title="The flyer’s contact details are hidden" style="position:absolute;right:3.5%;bottom:3.5%;width:47%;height:11%;background:#fff;border-radius:0 0 18px 0;"></span>
+    </div>
+  </div>
+</div>
+
+<section class="fade-in-section mb-5" aria-labelledby="how-it-works-title">
+  <div class="text-center mb-3">
+    <h2 class="h4 mb-1" id="how-it-works-title">How it works</h2>
+    <p class="small text-muted mb-0">Simple request steps for patients and healthcare facilities.</p>
+  </div>
+  <div class="row g-3">
+    <div class="col-12 col-lg-6">
+      <article class="how-it-works-card">
+        <div class="how-it-works-heading">
+          <div class="icon-circle"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i></div>
+          <h3 class="h5 mb-0">Diagnostic testing</h3>
+        </div>
+        <ol class="process-steps">
+          <li>
+            <span class="step-number" aria-hidden="true">1</span>
+            <div><strong>Choose your tests</strong><p>Browse the diagnostic catalog and add the tests you need to your request.</p></div>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">2</span>
+            <div><strong>Choose home collection</strong><p>At checkout, request home sample collection and provide your address and contact details.</p></div>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">3</span>
+            <div><strong>Confirm your visit</strong><p>Send your request on WhatsApp. The Darlez team will confirm service availability and appointment details.</p></div>
+          </li>
+        </ol>
+        <a href="{% url 'storefront:catalog' %}?department=diagnostics" class="btn btn-outline-success">Browse Diagnostic Tests</a>
+      </article>
+    </div>
+    <div class="col-12 col-lg-6">
+      <article class="how-it-works-card">
+        <div class="how-it-works-heading">
+          <div class="icon-circle"><i class="bi bi-box-seam" aria-hidden="true"></i></div>
+          <h3 class="h5 mb-0">Facility supply orders</h3>
+        </div>
+        <ol class="process-steps">
+          <li>
+            <span class="step-number" aria-hidden="true">1</span>
+            <div><strong>Browse supplies</strong><p>Choose equipment, reagents or consumables, or request a quote for a featured analyzer.</p></div>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">2</span>
+            <div><strong>Build your request</strong><p>Add catalog items and quantities, then provide your facility and contact details.</p></div>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">3</span>
+            <div><strong>Confirm with Darlez</strong><p>Send your request through WhatsApp so the team can confirm availability and order details.</p></div>
+          </li>
+        </ol>
+        <a href="{% url 'storefront:catalog' %}?department=supplies" class="btn btn-outline-success">Browse Equipment &amp; Supplies</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% if categories %}
+<div class="fade-in-section mb-5">
+  <h4 class="mb-3">Browse by Specialty</h4>
+  <div class="row g-3">
+    {% for c in categories %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="{% url 'storefront:catalog' %}?category={{ c.obj.pk }}" class="category-card">
+          <div class="cat-icon"><i class="bi {{ c.icon }}"></i></div>
+          <div class="fw-semibold">{{ c.obj.name }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if supply_products %}
+<div class="fade-in-section mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+    <h4 class="mb-0 home-section-title">Equipment, Reagents &amp; Consumables</h4>
+    <a href="{% url 'storefront:catalog' %}?department=supplies" class="btn btn-outline-success btn-sm">Browse Supply Catalog &rarr;</a>
+  </div>
+  <div class="row g-3">
+    {% for p in supply_products %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card product-card">
+          {% include "storefront/_product_image.html" with item=p image_class="card-img-top" image_style="height:150px;object-fit:cover;" %}
+          <div class="card-body">
+            <div class="small text-muted">{{ p.category.name }}</div>
+            <h6 class="card-title">{{ p.name }}</h6>
+            <div><span class="price-new">₦{{ p.current_price|intcomma }}</span></div>
+            <a href="{% url 'storefront:product_detail' p.pk %}" class="btn btn-sm btn-success mt-2 w-100">View / Request</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if featured_products %}
+<div class="fade-in-section mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0 home-section-title">On Sale Right Now</h4>
+    <a href="{% url 'storefront:catalog' %}" class="btn btn-outline-success btn-sm">Browse All Products &amp; Services &rarr;</a>
+  </div>
+  <div class="row g-3">
+    {% for p in featured_products %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card product-card">
+          {% include "storefront/_product_image.html" with item=p image_class="card-img-top" image_style="height:150px;object-fit:cover;" %}
+          <div class="card-body">
+            <h6 class="card-title">{{ p.name }}</h6>
+            <div>
+              <span class="price-new">₦{{ p.current_price|intcomma }}</span>
+              {% if p.active_promotion %}<span class="price-old ms-1">₦{{ p.selling_price|intcomma }}</span>{% endif %}
+            </div>
+            <a href="{% url 'storefront:product_detail' p.pk %}" class="btn btn-sm btn-success mt-2 w-100">View</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if popular_products %}
+<div class="fade-in-section mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0 home-section-title">Popular Diagnostic Services</h4>
+    <a href="{% url 'storefront:catalog' %}?department=diagnostics" class="btn btn-outline-success btn-sm">Browse Services &rarr;</a>
+  </div>
+  <div class="row g-3">
+    {% for p in popular_products %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card product-card">
+          {% include "storefront/_product_image.html" with item=p image_class="card-img-top" image_style="height:150px;object-fit:cover;" %}
+          <div class="card-body">
+            <h6 class="card-title">{{ p.name }}</h6>
+            <div><span class="price-new">₦{{ p.current_price|intcomma }}</span></div>
+            <a href="{% url 'storefront:product_detail' p.pk %}" class="btn btn-sm btn-success mt-2 w-100">View</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="cta-band fade-in-section">
+  <h3 class="mb-2">Diagnostic Testing &amp; Laboratory Supply</h3>
+  <p class="mb-3">Patients can request diagnostic services. Healthcare facilities can browse equipment, reagents, and consumables and send an order request through WhatsApp.</p>
+  <a href="https://wa.me/{{ whatsapp_number }}" target="_blank" rel="noopener noreferrer" class="btn fw-semibold btn-lg cta-whatsapp-btn">
+    <i class="bi bi-whatsapp"></i> Contact Darlez on WhatsApp
+  </a>
+</div>
+
+<section class="contact-request-section mt-5" id="contact-request" aria-labelledby="contact-request-title">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-5">
+      <p class="hero-eyebrow mb-2">Talk to Darlez</p>
+      <h2 class="h3 mb-3" id="contact-request-title">Send a message request</h2>
+      <p class="text-muted mb-2">Tell us how we can help with a diagnostic service or laboratory supply.</p>
+      <p class="small text-muted mb-0">Your message opens in WhatsApp. Tap Send there to deliver it; the Darlez team can reply in that conversation.</p>
+    </div>
+    <div class="col-lg-7">
+      <div class="card contact-request-card border-0 shadow-sm p-3 p-md-4">
+        <form method="post" action="{% url 'storefront:contact_request' %}">
+          {% csrf_token %}
+          {% include "_form_fields.html" with form=contact_form %}
+          <button type="submit" class="btn btn-success">
+            <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Continue to WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

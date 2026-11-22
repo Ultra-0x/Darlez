@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-labelledby="title description">
+  <title id="title">2HPP post-meal glucose test</title>
+  <desc id="description">A clinical illustration of a meal, a two-hour clock, and a laboratory blood sample tube.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafb"/>
+      <stop offset="1" stop-color="#e8eef2"/>
+    </linearGradient>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d8e6ec"/>
+      <stop offset=".45" stop-color="#fff"/>
+      <stop offset="1" stop-color="#c5d8e1"/>
+    </linearGradient>
+    <linearGradient id="sample" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e54a59"/>
+      <stop offset="1" stop-color="#a90f24"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#283540" flood-opacity=".14"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="640" rx="36" fill="url(#background)"/>
+  <circle cx="786" cy="106" r="118" fill="#d71931" opacity=".055"/>
+  <circle cx="115" cy="562" r="145" fill="#536c7c" opacity=".055"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="54" y="48" width="147" height="42" rx="21" fill="#fff" stroke="#dce4e8"/>
+    <circle cx="78" cy="69" r="6" fill="#d71931"/>
+    <text x="94" y="75" fill="#a90f24" font-size="16" font-weight="700" letter-spacing="2">2HPP TEST</text>
+    <text x="56" y="133" fill="#283540" font-size="31" font-weight="700">POST-MEAL GLUCOSE</text>
+    <text x="57" y="164" fill="#65747e" font-size="17">Clinical chemistry · Blood sample</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="288" cy="432" rx="159" ry="105" fill="#fff" stroke="#dce4e8" stroke-width="3"/>
+    <ellipse cx="288" cy="432" rx="123" ry="73" fill="#f5f7f8" stroke="#e4eaed" stroke-width="3"/>
+    <path d="M248 405c18-20 49-18 65-2 15 15 16 41 1 54-17 15-48 12-64-4-14-14-15-34-2-48z" fill="#d8a56c"/>
+    <path d="M302 415c15-12 37-9 47 4 10 14 5 34-10 43-16 9-37 4-44-11-7-13-4-27 7-36z" fill="#77a176"/>
+    <circle cx="352" cy="397" r="10" fill="#d71931"/>
+    <circle cx="365" cy="417" r="8" fill="#e4b54e"/>
+    <circle cx="342" cy="439" r="8" fill="#e4b54e"/>
+    <path d="M153 365v126M174 365v126M195 365v126" stroke="#b8c7ce" stroke-width="7" stroke-linecap="round"/>
+    <path d="M150 365h48" stroke="#283540" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <circle cx="664" cy="288" r="97" fill="#fff" stroke="#dce4e8" stroke-width="3"/>
+    <circle cx="664" cy="288" r="77" fill="#f8fafb" stroke="#e8edef" stroke-width="2"/>
+    <path d="M664 232v58l38 23" fill="none" stroke="#283540" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="664" cy="288" r="8" fill="#d71931"/>
+    <text x="664" y="356" text-anchor="middle" fill="#a90f24" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">2 HOURS</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="515" y="407" width="96" height="25" rx="8" fill="#a90f24"/>
+    <rect x="524" y="426" width="78" height="153" rx="22" fill="url(#tube)" stroke="#b9cbd3" stroke-width="3"/>
+    <path d="M527 519h72v38c0 11-9 20-20 20h-32c-11 0-20-9-20-20z" fill="url(#sample)"/>
+    <path d="M540 447v55" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+    <rect x="537" y="463" width="52" height="24" rx="5" fill="#fff" opacity=".85"/>
+    <text x="563" y="480" text-anchor="middle" fill="#a90f24" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">2HPP</text>
+  </g>
+
+  <rect x="54" y="566" width="792" height="1" fill="#d9e2e6"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">
+    <circle cx="70" cy="598" r="7" fill="#d71931"/>
+    <text x="88" y="604" fill="#53616a">DIAGNOSTIC TESTING</text>
+    <text x="844" y="604" text-anchor="end" fill="#a90f24">DARLEZ MEDICAL DIAGNOSTICS LABORATORY</text>
+  </g>
+</svg>

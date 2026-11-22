@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-labelledby="title description">
+  <title id="title">Laboratory diagnostic testing</title>
+  <desc id="description">A clinical illustration of a microscope and blood sample tubes.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafb"/>
+      <stop offset="1" stop-color="#e8eef2"/>
+    </linearGradient>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d8e6ec"/>
+      <stop offset=".45" stop-color="#fff"/>
+      <stop offset="1" stop-color="#c5d8e1"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#283540" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="900" height="640" rx="36" fill="url(#background)"/>
+  <circle cx="786" cy="106" r="118" fill="#d71931" opacity=".055"/>
+  <circle cx="115" cy="562" r="145" fill="#536c7c" opacity=".055"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="54" y="48" width="176" height="42" rx="21" fill="#fff" stroke="#dce4e8"/>
+    <circle cx="78" cy="69" r="6" fill="#d71931"/>
+    <text x="94" y="75" fill="#a90f24" font-size="16" font-weight="700" letter-spacing="2">DIAGNOSTICS</text>
+    <text x="56" y="133" fill="#283540" font-size="31" font-weight="700">LABORATORY TESTING</text>
+    <text x="57" y="164" fill="#65747e" font-size="17">Clinical analysis · Patient samples</text>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M259 260h76l50 51-24 25-42-43h-60z" fill="#536c7c"/>
+    <path d="M301 252l43-42 26 26-41 43z" fill="#a90f24"/>
+    <path d="M365 238l50 50-23 23-51-49z" fill="#d71931"/>
+    <path d="M390 295l45 44-25 25-44-44z" fill="#65747e"/>
+    <path d="M351 350c-27 21-43 50-43 83v17h34v-17c0-22 10-39 28-53l38-30-23-25z" fill="#536c7c"/>
+    <path d="M270 448h210v28H270z" rx="8" fill="#283540"/>
+    <path d="M322 398h118v50H322z" rx="12" fill="#d71931"/>
+    <circle cx="381" cy="373" r="11" fill="#fff" stroke="#dce4e8" stroke-width="4"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="550" y="260" width="76" height="24" rx="7" fill="#a90f24"/>
+    <rect x="558" y="278" width="60" height="174" rx="19" fill="url(#tube)" stroke="#b9cbd3" stroke-width="3"/>
+    <path d="M561 379h54v51c0 10-8 19-19 19h-16c-11 0-19-9-19-19z" fill="#b6192e"/>
+    <path d="M573 300v58" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+    <rect x="566" y="326" width="44" height="23" rx="5" fill="#fff" opacity=".9"/>
+    <rect x="659" y="299" width="76" height="24" rx="7" fill="#536c7c"/>
+    <rect x="667" y="317" width="60" height="135" rx="19" fill="url(#tube)" stroke="#b9cbd3" stroke-width="3"/>
+    <path d="M670 387h54v43c0 10-8 19-19 19h-16c-11 0-19-9-19-19z" fill="#d9a64e"/>
+    <path d="M682 339v35" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <rect x="54" y="566" width="792" height="1" fill="#d9e2e6"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">
+    <circle cx="70" cy="598" r="7" fill="#d71931"/>
+    <text x="88" y="604" fill="#53616a">DIAGNOSTIC SERVICES</text>
+    <text x="844" y="604" text-anchor="end" fill="#a90f24">DARLEZ MEDICAL DIAGNOSTICS LABORATORY</text>
+  </g>
+</svg>

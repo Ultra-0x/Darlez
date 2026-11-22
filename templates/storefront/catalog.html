@@ -1,0 +1,38 @@
+{% extends "base_public.html" %}
+{% load humanize %}
+{% block title %}{% if department == "supplies" %}Equipment &amp; Supplies{% else %}Diagnostics &amp; Supplies{% endif %}{% endblock %}
+{% block content %}
+<h3 class="mb-3">{% if department == "supplies" %}Browse Diagnostic Equipment &amp; Supplies{% elif department == "diagnostics" %}Browse Diagnostic Tests &amp; Services{% else %}Diagnostics, Equipment &amp; Supplies{% endif %}</h3>
+<form method="get" class="row g-2 mb-4">
+  {% if department %}<input type="hidden" name="department" value="{{ department }}">{% endif %}
+  <div class="col-auto"><input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search tests, equipment, reagents or consumables"></div>
+  <div class="col-auto">
+    <select name="category" class="form-select">
+      <option value="">All {% if department == "supplies" %}supply{% elif department == "diagnostics" %}diagnostic{% endif %} categories</option>
+      {% for c in categories %}<option value="{{ c.pk }}" {% if category_id == c.pk|stringformat:"s" %}selected{% endif %}>{{ c.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="col-auto"><button class="btn btn-success">Search</button></div>
+</form>
+
+<div class="row g-3">
+  {% for p in products %}
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card product-card">
+        {% include "storefront/_product_image.html" with item=p image_class="card-img-top" image_style="height:150px;object-fit:cover;border-radius:1rem 1rem 0 0;" %}
+        <div class="card-body">
+          <h6 class="card-title">{{ p.name }}</h6>
+          <div>
+            <span class="price-new">₦{{ p.current_price|intcomma }}</span>
+            {% if p.active_promotion %}<span class="price-old ms-1">₦{{ p.selling_price|intcomma }}</span>{% endif %}
+          </div>
+          {% if p.is_out_of_stock %}<span class="badge badge-soft-danger">Out of stock</span>{% endif %}
+          <a href="{% url 'storefront:product_detail' p.pk %}" class="btn btn-sm btn-success mt-2 w-100">View</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p class="text-muted">No products found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

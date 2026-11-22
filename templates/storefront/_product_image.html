@@ -1,0 +1,18 @@
+{% load static %}
+{% if item.image %}
+  <img src="{{ item.image.url }}" alt="{{ item.name }}" class="{{ image_class }}" style="{{ image_style }}">
+{% elif "2HPP" in item.name %}
+  <img src="{% static 'img/tests/2hpp-postprandial-glucose.svg' %}" alt="Illustration of a meal, two-hour clock, and blood sample for the 2HPP glucose test" class="{{ image_class }}" style="{{ image_style }}">
+{% elif item.category and item.category.name == "Diagnostic Equipment" %}
+  <img src="{% static 'img/products/diagnostic-equipment.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% elif item.category and item.category.name == "Reagents & Kits" %}
+  <img src="{% static 'img/products/reagents-kits.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% elif item.category and item.category.name == "Consumables" %}
+  <img src="{% static 'img/products/lab-consumables.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% elif item.category and item.category.name == "Ultrasound Scan" %}
+  <img src="{% static 'img/products/ultrasound-scan.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% elif item.category and item.category.name == "ECG" %}
+  <img src="{% static 'img/products/ecg-testing.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% else %}
+  <img src="{% static 'img/products/diagnostic-lab.svg' %}" alt="{{ item.name }} illustration" class="{{ image_class }}" style="{{ image_style }}">
+{% endif %}
