@@ -34,14 +34,20 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() in ("1", "true", "yes")
 
 # Comma-separated list in production, e.g. ALLOWED_HOSTS=darlez.example.com,www.darlez.example.com
 _allowed_hosts_env = os.environ.get("DJANGO_ALLOWED_HOSTS", "")
-ALLOWED_HOSTS = [h.strip() for h in _allowed_hosts_env.split(",") if h.strip()] or [
-    "localhost", "127.0.0.1", "testserver",
+ALLOWED_HOSTS = [
+    "darlez-p5r5odj9z-ultra0x.vercel.app",
+    ".vercel.app",
+    "localhost",
+    "127.0.0.1",
 ]
 
 # Trust HTTPS origins behind a proxy/load balancer (Railway, Render, etc.) and let CSRF work
 # for your real domain in production.
 _csrf_origins_env = os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "")
-CSRF_TRUSTED_ORIGINS = [o.strip() for o in _csrf_origins_env.split(",") if o.strip()]
+CSRF_TRUSTED_ORIGINS = [
+    "https://darlez-p5r5odj9z-ultra0x.vercel.app",
+    "https://*.vercel.app",
+]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
