@@ -52,6 +52,20 @@ class PublicCatalogDepartmentTests(TestCase):
         self.assertContains(response, "Full Blood Count")
         self.assertNotContains(response, "Malaria RDT Kit")
         self.assertNotContains(response, "Chemistry Analyzer")
+        self.assertNotContains(response, "Message us to check availability")
+
+    def test_empty_diagnostics_catalog_offers_whatsapp_availability_enquiry(self):
+        response = self.client.get(
+            reverse("storefront:catalog"),
+            {"department": "diagnostics", "q": "no matching test"},
+        )
+
+        self.assertContains(response, "No diagnostic tests are currently listed.")
+        self.assertContains(response, "Message us to check availability")
+        self.assertContains(
+            response,
+            f"https://wa.me/{settings.WHATSAPP_BUSINESS_NUMBER}?text=Hello%20Darlez%2C%20I%20would%20like%20to%20ask%20about%20home%20testing%20and%20available%20diagnostic%20services.",
+        )
 
     def test_supply_catalog_includes_equipment_and_reagents(self):
         response = self.client.get(reverse("storefront:catalog"), {"department": "supplies"})
@@ -88,7 +102,11 @@ class PublicHomeHeroTests(TestCase):
         self.assertContains(response, "Diagnostic testing, from the comfort of home")
         self.assertContains(response, "Our team can visit your home to collect samples for testing.")
         self.assertContains(response, "Request Home Testing")
-        self.assertContains(response, "confirm service availability and appointment details")
+        self.assertContains(response, "whether home sample collection is available in your area")
+        self.assertContains(
+            response,
+            f'href="https://wa.me/{settings.WHATSAPP_BUSINESS_NUMBER}?text=Hello%20Darlez%2C%20I%20would%20like%20to%20ask%20about%20home%20testing%20and%20available%20diagnostic%20services."',
+        )
 
     def test_homepage_displays_both_supplied_worker_photos(self):
         response = self.client.get(reverse("storefront:home"))

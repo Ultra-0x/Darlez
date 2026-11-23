@@ -39,9 +39,9 @@
   <div class="home-service-copy">
     <p class="eyebrow">HOME SAMPLE COLLECTION</p>
     <h2 id="home-service-title">Diagnostic testing, from the comfort of home</h2>
-    <p>Our team can visit your home to collect samples for testing. Choose your tests, request home sample collection, and provide your address. We’ll confirm service availability and appointment details.</p>
+    <p>Our team can visit your home to collect samples for testing. Message us to ask which tests are currently available, whether home sample collection is available in your area, and to confirm appointment details.</p>
   </div>
-  <a href="{% url 'storefront:catalog' %}?department=diagnostics" class="btn btn-success">
+  <a href="{{ home_testing_whatsapp_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-success">
     Request Home Testing <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
   </a>
 </section>

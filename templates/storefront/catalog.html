@@ -32,7 +32,16 @@
       </div>
     </div>
   {% empty %}
-    <p class="text-muted">No products found.</p>
+    {% if department == "diagnostics" %}
+      <div class="text-muted">
+        <p>No diagnostic tests are currently listed. Message our team to ask about available tests and home testing availability.</p>
+        <a href="{{ home_testing_whatsapp_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-success">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Message us to check availability
+        </a>
+      </div>
+    {% else %}
+      <p class="text-muted">No products found.</p>
+    {% endif %}
   {% endfor %}
 </div>
 {% endblock %}

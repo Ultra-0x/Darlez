@@ -48,6 +48,11 @@ FEATURED_EQUIPMENT = [
 ]
 
 
+def _home_testing_whatsapp_url():
+    message = "Hello Darlez, I would like to ask about home testing and available diagnostic services."
+    return f"https://wa.me/{settings.WHATSAPP_BUSINESS_NUMBER}?text={quote(message, safe='')}"
+
+
 def _storefront_home_context():
     today = timezone.localdate()
     public_products = Product.objects.filter(is_active=True).exclude(
@@ -80,6 +85,7 @@ def _storefront_home_context():
         "total_tests": total_tests,
         "total_categories": categories.count(),
         "contact_form": ContactRequestForm(),
+        "home_testing_whatsapp_url": _home_testing_whatsapp_url(),
     }
 
 
@@ -134,7 +140,7 @@ def storefront_catalog(request):
         products = products.filter(category_id=category_id)
     return render(request, "storefront/catalog.html", {
         "products": products, "categories": categories, "query": query, "category_id": category_id,
-        "department": department,
+        "department": department, "home_testing_whatsapp_url": _home_testing_whatsapp_url(),
     })
 
 
