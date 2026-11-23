@@ -114,10 +114,6 @@ DATABASES = {
     )
 }
 
-print("VERCEL:", os.getenv("VERCEL"))
-print("DATABASE_URL EXISTS:", bool(os.getenv("DATABASE_URL")))
-print("DATABASE ENGINE:", DATABASES["default"]["ENGINE"])
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
